@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #003566;
+}
+
+.clock {
+    width: 580px;
+    height: auto;
+    padding: 40px;
+    background-color: #ffc300;
+    box-shadow: 10px 10px 50px #808080;
+    border-radius: 20px;
+    margin-left: 130px;
+}
+
+.clock .display {
+    min-width: 350px;
+    padding: 40px 10px 10px;
+    border-radius: 6px;
+    background-color: #ffc710;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08) inset,
+        0 1px 1px #fafafa;
+    position: relative;
+}
+
+.clock .display .weekdays {
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    text-align: center;
+    font-family: "Orbitron", sans-serif;
+}
+
+.weekdays span {
+    padding: 0 10px;
+}
+
+.weekdays span {
+    color: #003566;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.3s;
+    letter-spacing: 1px;
+}
+
+.weekdays span.active {
+    color: #003566;
+    font-weight: 700;
+}
+
+.display .timeDisplay {
+    display: flex;
+    justify-content: center;
+}
+
+.timeDisplay .time {
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 3px;
+    font-family: "Orbitron", sans-serif;
+}
+
+.timeDisplay .format {
+    font-size: 20px;
+    margin-top: 32px;
+    margin-left: 10px;
+    font-weight: 200;
+    font-family: "Orbitron", sans-serif;
+}
+
+.hours,
+.minutes,
+.seconds {
+    color: #003566;
+}
+
+.time .dot {
+    animation: blinker 1s linear infinite;
+}
+
+.heading {
+    margin: 17px -325px 320px 10px;
+}
+
+.heading h1 {
+    color: #ffc300;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@keyframes blinker {
+    25% {
+        opacity: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .clock {
+        width: 580px;
+        margin-left: 130px;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 991px) {
+    .clock {
+        width: 90%;
+        margin-left: 110;
+        padding: 30px;
+    }
+
+    .timeDisplay .time {
+        font-size: 70px;
+    }
+}
+
+/* Small tablets / large mobiles */
+@media (max-width: 767px) {
+    .clock {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .timeDisplay .time {
+        font-size: 60px;
+    }
+
+    .timeDisplay .format {
+        font-size: 18px;
+        margin-top: 25px;
+    }
+
+    .weekdays span {
+        font-size: 16px;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+    .clock {
+        width: 100%;
+        padding: 20px;
+        margin-right: 220px;
+    }
+
+    .timeDisplay .time {
+        font-size: 48px;
+    }
+
+    .timeDisplay .format {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .weekdays span {
+        font-size: 14px;
+        padding: 0 5px;
+    }
+
+    .heading {
+        margin: 10px 0 20px 0;
+    }
+}
